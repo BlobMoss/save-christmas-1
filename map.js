@@ -1,11 +1,10 @@
 
 function map(arr, func) {
-    // skapa en ny tom array av samma längd som arr
-
-    // för varje element i arr
-    //      newArray[j] = func(arr[j])
-
-    // returnera den nya arrayen
+    const newArray = new Array(arr.length)
+    for (let i = 0; i < arr.length; i++){
+        newArray[i] = func(arr[i])
+    }
+    return newArray
 }
 
 // Test 1
@@ -24,3 +23,7 @@ console.log(stringArray)    // ['boll', 'häst', 'flygplan']
 
 // Test 3 - GÖR ETT EGET TEST HÄR
 console.log('\nTEST 3')
+const numbers = [2,6,7,12,47]
+const newNumbers = map(numbers, x => Math.pow(x, 2))
+console.log(newNumbers)
+console.log(numbers)
